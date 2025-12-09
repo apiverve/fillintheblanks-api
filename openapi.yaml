@@ -1,0 +1,116 @@
+openapi: 3.0.4
+info:
+  title: Fill in the Blanks Generator
+  description: Fill in the Blanks Generator creates completion puzzles from idioms, proverbs, quotes, science facts, and geography trivia.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/fillintheblanks:
+    get:
+      summary: Generate Fill in the Blanks
+      description: Fill in the Blanks Generator creates completion puzzles from idioms, proverbs, quotes, science facts, and geography trivia.
+      operationId: fillintheblanks
+      parameters:
+      - name: category
+        default: random
+        in: query
+        schema:
+          type: string
+        required: false
+        description: 'Category: random, idioms, proverbs, quotes, science, geography'
+        example: idioms
+      - name: count
+        default: '5'
+        in: query
+        schema:
+          type: number
+        required: false
+        description: Number of puzzles (1-20)
+        example: '5'
+      - name: difficulty
+        default: medium
+        in: query
+        schema:
+          type: string
+        required: false
+        description: 'Difficulty: easy, medium, hard'
+        example: medium
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  puzzles:
+                  - id: 1
+                    sentence: A penny saved is a penny ___.
+                    answer: EARNED
+                    letterCount: 6
+                    hint: gained/obtained
+                    firstLetter: 
+                  - id: 2
+                    sentence: Actions speak louder than ___.
+                    answer: WORDS
+                    letterCount: 5
+                    hint: what we say
+                    firstLetter: 
+                  - id: 3
+                    sentence: The early bird catches the ___.
+                    answer: WORM
+                    letterCount: 4
+                    hint: a crawling creature
+                    firstLetter: 
+                  - id: 4
+                    sentence: When in Rome, do as the ___ do.
+                    answer: ROMANS
+                    letterCount: 6
+                    hint: people from Rome
+                    firstLetter: 
+                  - id: 5
+                    sentence: Every cloud has a silver ___.
+                    answer: LINING
+                    letterCount: 6
+                    hint: inner layer
+                    firstLetter: 
+                  count: 5
+                  difficulty: medium
+                  category: idioms
+                  html: "<html><head><title>Fill in the Blanks</title><style>body {font-family: Arial, sans-serif; padding: 20px; max-width: 700px; margin: 0 auto;}h1 {text-align: center; color: #673AB7;}.puzzle {background: #f5f5f5; padding: 20px; margin: 15px 0; border-radius: 10px;}.number {font-weight: bold; color: #673AB7; margin-bottom: 10px;}.sentence {font-size: 18px; line-height: 1.8;}.blank {display: inline-block; min-width: 100px; border-bottom: 2px solid #673AB7; margin: 0 5px;}.hint {font-size: 13px; color: #888; font-style: italic; margin-top: 10px;}.info {font-size: 12px; color: #999; margin-top: 5px;}</style></head><body><h1>Fill in the Blanks</h1><div class='puzzle'><div class='number'>#1</div><div class='sentence'>A penny saved is a penny <span class='blank'></span>.</div><div class='info'>6 letters</div><div class='hint'>Hint: gained/obtained</div></div><div class='puzzle'><div class='number'>#2</div><div class='sentence'>Actions speak louder than <span class='blank'></span>.</div><div class='info'>5 letters</div><div class='hint'>Hint: what we say</div></div><div class='puzzle'><div class='number'>#3</div><div class='sentence'>The early bird catches the <span class='blank'></span>.</div><div class='info'>4 letters</div><div class='hint'>Hint: a crawling creature</div></div><div class='puzzle'><div class='number'>#4</div><div class='sentence'>When in Rome, do as the <span class='blank'></span> do.</div><div class='info'>6 letters</div><div class='hint'>Hint: people from Rome</div></div><div class='puzzle'><div class='number'>#5</div><div class='sentence'>Every cloud has a silver <span class='blank'></span>.</div><div class='info'>6 letters</div><div class='hint'>Hint: inner layer</div></div></body></html>"
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
