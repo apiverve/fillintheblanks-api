@@ -15,7 +15,7 @@ const api = new fillintheblanksAPI({
 
 // Example query
 var query = {
-  category: "idioms",
+  category: "random",
   count: 5,
   difficulty: "medium"
 };
