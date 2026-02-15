@@ -11,22 +11,19 @@ namespace APIVerve.API.FillintheBlanksGenerator
     public class FillintheBlanksGeneratorQueryOptions
     {
         /// <summary>
-        /// Category: random, idioms, proverbs, quotes, science, geography
-        /// Example: idioms
+        /// Puzzle category
         /// </summary>
         [JsonProperty("category")]
         public string Category { get; set; }
 
         /// <summary>
-        /// Number of puzzles (1-20)
-        /// Example: 5
+        /// Number of puzzles
         /// </summary>
         [JsonProperty("count")]
         public string Count { get; set; }
 
         /// <summary>
-        /// Difficulty: easy, medium, hard
-        /// Example: medium
+        /// Difficulty level
         /// </summary>
         [JsonProperty("difficulty")]
         public string Difficulty { get; set; }
