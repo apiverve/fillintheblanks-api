@@ -1,1 +1,3 @@
-from .apiClient import FillintheblanksAPIClient
+from .apiClient import FillintheblanksAPIClient, FillintheblanksAPIClientError
+
+__all__ = ['FillintheblanksAPIClient', 'FillintheblanksAPIClientError']
