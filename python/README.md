@@ -44,7 +44,11 @@ from apiverve_fillintheblanksgenerator.apiClient import FillintheblanksAPIClient
 # Initialize the client with your APIVerve API key
 api = FillintheblanksAPIClient("[YOUR_API_KEY]")
 
-query = { "category": "random", "count": 5, "difficulty": "medium" }
+query = {
+    "category": "random",
+    "count": 5,
+    "difficulty": "medium"
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "category": "random", "count": 5, "difficulty": "medium" }
+query = {
+    "category": "random",
+    "count": 5,
+    "difficulty": "medium"
+}
 ```
 
 ###### Simple Request
@@ -165,7 +173,11 @@ from apiverve_fillintheblanksgenerator.apiClient import FillintheblanksAPIClient
 
 api = FillintheblanksAPIClient("[YOUR_API_KEY]")
 
-query = { "category": "random", "count": 5, "difficulty": "medium" }
+query = {
+    "category": "random",
+    "count": 5,
+    "difficulty": "medium"
+}
 
 try:
     result = api.execute(query)
@@ -186,7 +198,11 @@ from apiverve_fillintheblanksgenerator.apiClient import FillintheblanksAPIClient
 
 api = FillintheblanksAPIClient("[YOUR_API_KEY]")
 
-query = { "category": "random", "count": 5, "difficulty": "medium" }
+query = {
+    "category": "random",
+    "count": 5,
+    "difficulty": "medium"
+}
 
 try:
     result = api.execute(query)
@@ -220,7 +236,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_fillintheblanksgenerator.apiClient import FillintheblanksAPIClient, FillintheblanksAPIClientError
 
-query = { "category": "random", "count": 5, "difficulty": "medium" }
+query = {
+    "category": "random",
+    "count": 5,
+    "difficulty": "medium"
+}
 
 # Using context manager ensures proper cleanup
 with FillintheblanksAPIClient("[YOUR_API_KEY]") as api:
@@ -246,7 +266,11 @@ from apiverve_fillintheblanksgenerator.apiClient import FillintheblanksAPIClient
 # Enable debug mode
 api = FillintheblanksAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "category": "random", "count": 5, "difficulty": "medium" }
+query = {
+    "category": "random",
+    "count": 5,
+    "difficulty": "medium"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -261,8 +285,13 @@ from apiverve_fillintheblanksgenerator.apiClient import FillintheblanksAPIClient
 
 api = FillintheblanksAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "category": "random",
+    "count": 5,
+    "difficulty": "medium"
+}
+
 try:
-    query = { "category": "random", "count": 5, "difficulty": "medium" }
     result = api.execute(query)
     print(result)
 finally:
