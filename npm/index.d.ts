@@ -4,28 +4,48 @@ declare module '@apiverve/fillintheblanks' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface fillintheblanksResponse {
     status: string;
     error: string | null;
     data: FillintheBlanksGeneratorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface FillintheBlanksGeneratorData {
       puzzles:    Puzzle[];
-      count:      number;
-      difficulty: string;
-      category:   string;
-      html:       string;
+      count:      number | null;
+      difficulty: null | string;
+      category:   null | string;
+      html:       null | string;
+      image:      Image;
+  }
+  
+  interface Image {
+      imageName:   null | string;
+      format:      null | string;
+      downloadURL: null | string;
+      expires:     number | null;
   }
   
   interface Puzzle {
-      id:          number;
-      sentence:    string;
-      answer:      string;
-      letterCount: number;
-      hint:        string;
+      id:          number | null;
+      sentence:    null | string;
+      answer:      null | string;
+      letterCount: number | null;
+      hint:        null | string;
       firstLetter: null;
   }
 
