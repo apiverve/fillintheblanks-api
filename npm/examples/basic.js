@@ -17,7 +17,8 @@ const api = new fillintheblanksAPI({
 var query = {
   category: "random",
   count: 5,
-  difficulty: "medium"
+  difficulty: "medium",
+  image: false
 };
 
 // Make the API request using callback
