@@ -13,7 +13,14 @@ const API_URL = 'https://api.apiverve.com/v1/fillintheblanks';
  */
 async function callFillintheBlanksGeneratorAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            category: &#x27;idioms&#x27;,
+            count: 5,
+            difficulty: &#x27;medium&#x27;
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
