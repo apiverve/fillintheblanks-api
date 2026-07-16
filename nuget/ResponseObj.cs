@@ -25,6 +25,9 @@ namespace APIVerve.API.FillintheBlanksGenerator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -33,7 +36,7 @@ namespace APIVerve.API.FillintheBlanksGenerator
         public Puzzle[] Puzzles { get; set; }
 
         [JsonProperty("count")]
-        public long Count { get; set; }
+        public long? Count { get; set; }
 
         [JsonProperty("difficulty")]
         public string Difficulty { get; set; }
@@ -43,12 +46,30 @@ namespace APIVerve.API.FillintheBlanksGenerator
 
         [JsonProperty("html")]
         public string Html { get; set; }
+
+        [JsonProperty("image")]
+        public Image Image { get; set; }
+    }
+
+    public partial class Image
+    {
+        [JsonProperty("imageName")]
+        public string ImageName { get; set; }
+
+        [JsonProperty("format")]
+        public string Format { get; set; }
+
+        [JsonProperty("downloadURL")]
+        public Uri DownloadUrl { get; set; }
+
+        [JsonProperty("expires")]
+        public long? Expires { get; set; }
     }
 
     public partial class Puzzle
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("sentence")]
         public string Sentence { get; set; }
@@ -57,12 +78,24 @@ namespace APIVerve.API.FillintheBlanksGenerator
         public string Answer { get; set; }
 
         [JsonProperty("letterCount")]
-        public long LetterCount { get; set; }
+        public long? LetterCount { get; set; }
 
         [JsonProperty("hint")]
         public string Hint { get; set; }
 
         [JsonProperty("firstLetter")]
         public object FirstLetter { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
