@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/fillintheblanks",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "Fill in the Blanks Generator creates completion puzzles from idioms, proverbs, quotes, science facts, and geography trivia.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/fillintheblanks-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/fillintheblanks?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/fillintheblanks?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
