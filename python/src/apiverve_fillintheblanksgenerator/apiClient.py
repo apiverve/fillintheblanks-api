@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -26,7 +26,8 @@ class FillintheblanksAPIClient:
     VALIDATION_RULES = {
         "category": {"type": "string", "required": False, "default": "random"},
         "count": {"type": "integer", "required": False, "min": 1, "max": 20, "default": 5},
-        "difficulty": {"type": "string", "required": False, "default": "medium"}
+        "difficulty": {"type": "string", "required": False, "default": "medium"},
+        "image": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns
