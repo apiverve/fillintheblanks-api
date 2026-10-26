@@ -1,7 +1,7 @@
 {
     "name": "apiverve/fillintheblanks",
     "description": "Fill in the Blanks Generator creates completion puzzles from idioms, proverbs, quotes, science facts, and geography trivia.",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "type": "library",
     "license": "MIT",
     "authors": [
