@@ -2,7 +2,7 @@
 ///
 /// Fill in the Blanks Generator creates completion puzzles from idioms, proverbs, quotes, science facts, and geography trivia.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/fillintheblanks?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/fillintheblanks?utm_source=dart&utm_medium=referral&utm_content=readme
 library apiverve_fillintheblanks;
 
 export 'src/client.dart';

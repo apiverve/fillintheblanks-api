@@ -46,12 +46,13 @@ final _formatPatterns = {
 
 /// Fill in the Blanks Generator API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/fillintheblanks?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/fillintheblanks?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [category] - Puzzle category
 /// * [count] - Number of puzzles [min: 1, max: 20]
 /// * [difficulty] - Difficulty level
+/// * [image] - Set to true to generate a downloadable puzzle image
 class FillintheblanksClient {
   final String apiKey;
   final String baseUrl;
@@ -62,6 +63,7 @@ class FillintheblanksClient {
     'category': ValidationRule(type: 'string', required: false),
     'count': ValidationRule(type: 'integer', required: false, min: 1, max: 20),
     'difficulty': ValidationRule(type: 'string', required: false),
+    'image': ValidationRule(type: 'boolean', required: false),
   };
 
   FillintheblanksClient(this.apiKey, {
